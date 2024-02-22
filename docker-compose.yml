@@ -1,0 +1,28 @@
+version: '3.8'
+
+services:
+  spring-config-server:
+    image: <spring_config_server_image>
+    ports:
+      - "8888:8888"
+    environment:
+      - SPRING_CLOUD_CONFIG_SERVER_GIT_URI=<your_git_repo_url>
+      # Otras variables de entorno según sea necesario
+
+  consul:
+    image: consul
+    ports:
+      - "8500:8500"
+    # Otras configuraciones específicas de Consul según sea necesario
+
+  spring-cloud-gateway:
+    image: <spring_cloud_gateway_image>
+    ports:
+      - "8080:8080"
+    environment:
+      - SPRING_CLOUD_GATEWAY_DISCOVERY_LOCATOR_ENABLED=true
+      - SPRING_CLOUD_GATEWAY_DISCOVERY_LOCATOR_LOWER_CASE_SERVICE_ID=true
+      - SPRING_CLOUD_GATEWAY_DISCOVERY_LOCATOR_URLS=<url_of_discovery_server>
+    depends_on:
+      - spring-config-server
+      - consul
