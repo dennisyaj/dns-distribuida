@@ -1,4 +1,8 @@
 spring:
+  application:
+    name: app-authors
+  profiles:
+    active: dev
   datasource:
     url: jdbc:postgresql://dpg-cmptvb6g1b2c73fe2qh0-a.oregon-postgres.render.com/distribuida_0gjr
     username: distribuida_0gjr_user
