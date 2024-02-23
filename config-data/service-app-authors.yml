@@ -4,7 +4,7 @@ spring:
   profiles:
     active: dev
   datasource:
-    url: jdbc:postgresql://dpg-cmptvb6g1b2c73fe2qh0-a.oregon-postgres.render.com/distribuida_0gjr
+    url: jdbc:postgresql://dpg-cmptvb6g1b2c73fe2qh0-a.oregon-postgres.render.com:5432/distribuida_0gjr
     username: distribuida_0gjr_user
     password: PBTnA2cr7y9KbdqSCRoiYyKuvI3dkuyz
 
