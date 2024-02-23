@@ -1,10 +1,11 @@
 server:
-  port: 8888
+  port: 8081
 
 spring:
   cloud:
     config:
       server:
         git:
-          uri: https://github.com/dennisyaj/dns-distribuida.git
+          uri: https://github.com/CoilBetrox/grupal-distribuida.git
           search-paths: config-data
+        bootstrap: true
